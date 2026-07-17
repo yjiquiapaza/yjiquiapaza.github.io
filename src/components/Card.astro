@@ -1,29 +1,17 @@
 ---
-import { Image } from 'astro:assets'
-const {
-  title,
-  event,
-  authors,
-  doi,
-  pdf,
-  url,
-  video,
-  year,
-  image,
-  alt,
-  acronym,
-} = Astro.props
-import DOI from '@assets/logos/academicons--doi.svg'
-import Video from '@assets/logos/mdi--video.svg'
-import PDF from '@assets/logos/mingcute--pdf-fill.svg'
-import Website from '@assets/logos/bitcoin-icons--link-filled.svg'
+import { Image } from "astro:assets";
+
+const { title, event, authors, doi, pdf, url, video, year, image, alt, acronym } = Astro.props;
+
+import DOI from "@assets/logos/academicons--doi.svg";
+import Website from "@assets/logos/bitcoin-icons--link-filled.svg";
+import Video from "@assets/logos/mdi--video.svg";
+import PDF from "@assets/logos/mingcute--pdf-fill.svg";
 //! TODO: add cite and abstract buttons using textarea collapse
 ---
 
 <div class="font-montserrat-regular pb-5 pt-5">
-  <div
-    class="flex flex-col items-center md:flex md:flex-row border-b-1 border-primary"
-  >
+  <div class="flex flex-col items-center md:flex md:flex-row border-b-2 border-primary">
     <div class="md:w-96">
       {(<Image src={image} alt={alt} />)}
     </div>
@@ -32,8 +20,7 @@ import Website from '@assets/logos/bitcoin-icons--link-filled.svg'
         {title}
       </div>
       <div class="mt-1 block text-sm leading-tight">
-        {
-          authors.map((author: string) =>
+        {authors.map((author: string) =>
             author === 'Yhonatan Iquiapaza,' ? (
               <span class="font-montserrat-semi-bold">
                 <strong>{author}</strong>
@@ -41,12 +28,10 @@ import Website from '@assets/logos/bitcoin-icons--link-filled.svg'
             ) : (
               <span class="pr-1">{author}</span>
             ),
-          )
-        }
+          )}
       </div>
       <div class="mt-1 font-alegreya-medium-italic content-center">
-        {
-          (acronym === 'SVR' && (
+        {(acronym === 'SVR' && (
             <span class="bg-green-500 text-white pl-2 pr-2 rounded-2xl font-montserrat-semi-bold text-sm">
               {acronym}
             </span>
@@ -70,49 +55,41 @@ import Website from '@assets/logos/bitcoin-icons--link-filled.svg'
               <span class="bg-purple-500 text-white pl-2 pr-2 rounded-2xl font-montserrat-semi-bold text-sm">
                 {acronym}
               </span>
-            ))
-        }
-        <span class="pl-2">{event}</span> - {year}
+            ))}
+        <span class="pl-2">{event}</span>
+        - {year}
       </div>
       <div class="flex flex-row pt-3">
-        {
-          doi && (
+        {doi && (
             <div class="p-2 hover:bg-orange-100 hover:rounded-full hover:text-primary">
-              <a href={doi} target="_blank" class="flex flex-row">
+              <a href={doi} target="_blank" rel="noreferrer" class="flex flex-row">
                 <DOI width={24} height={24} />[ Link ]
               </a>
             </div>
-          )
-        }
-        {
-          pdf && (
+          )}
+        {pdf && (
             <div class="p-2 hover:bg-orange-100 hover:rounded-full hover:text-primary">
-              <a href={pdf} target="_blank" class="flex flex-row">
+              <a href={pdf} target="_blank" rel="noreferrer" class="flex flex-row">
                 <PDF width={24} height={24} />[ PDF ]
               </a>
             </div>
-          )
-        }
-        {
-          url && (
+          )}
+        {url && (
             <div class="p-2 hover:bg-emerald-100 hover:rounded-full hover:text-primary">
-              <a href={url} target="_blank" class="flex flex-row">
+              <a href={url} target="_blank" rel="noreferrer" class="flex flex-row">
                 <div class="flex justify-center">
                   <Website width={24} height={24} />[ URL ]
                 </div>
               </a>
             </div>
-          )
-        }
-        {
-          video && (
+          )}
+        {video && (
             <div class="p-2 hover:bg-red-100 hover:rounded-full hover:text-primary">
-              <a href={video} target="_blank" class="flex flex-row">
+              <a href={video} target="_blank" rel="noreferrer" class="flex flex-row">
                 <Video width={24} height={24} />[ Video ]
               </a>
             </div>
-          )
-        }
+          )}
       </div>
     </div>
   </div>

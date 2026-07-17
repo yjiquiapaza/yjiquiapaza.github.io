@@ -1,16 +1,17 @@
 ---
-import type { link } from '@interfaces/global'
-const currentPath = Astro.url.pathname
+import type { link } from "@interfaces/global";
+
+const currentPath = Astro.url.pathname;
 
 const links: Array<link> = [
-  { href: '/', text: 'Home' },
-  { href: '/#publications', text: 'Publications' },
+  { href: "/", text: "Home" },
+  { href: "/#publications", text: "Publications" },
   // { href: '/publications', text: 'Publications'},
   // { href: '/projects', text: 'Projects'},
   // { href: '/talks', text: 'Talks'},
   //{ href: '/resume', text: 'Resume' },
-  { href: '/resume/', text: 'Resume' },
-]
+  { href: "/resume/", text: "Resume" },
+];
 //! TODO: resolve the underline in menu header with use resume page[]
 ---
 
@@ -26,8 +27,7 @@ const links: Array<link> = [
         transition:name="menu-line"
         class="space-x-4 text-left py-10 text-base md:w-auto md:pl-50 md:text-2xl"
       >
-        {
-          links.map(({ href, text }) => (
+        {links.map(({ href, text }) => (
             <a
               href={href}
               class:list={[
@@ -40,8 +40,7 @@ const links: Array<link> = [
             >
               {text}
             </a>
-          ))
-        }
+          ))}
       </div>
     </div>
   </nav>

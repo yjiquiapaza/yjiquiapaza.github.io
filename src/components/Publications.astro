@@ -1,15 +1,14 @@
 ---
-import { ListPublications } from '../data/publications'
-import Card from '../components/Card.astro'
+import image1 from "@assets/publications/1.png";
+import image2 from "@assets/publications/2.png";
+import image3 from "@assets/publications/3.png";
+import image4 from "@assets/publications/4.png";
+import image5 from "@assets/publications/5.png";
+import image6 from "@assets/publications/6.png";
+import Card from "../components/Card.astro";
+import { ListPublications } from "../data/publications";
 
-import image1 from '@assets/publications/1.png'
-import image2 from '@assets/publications/2.png'
-import image3 from '@assets/publications/3.png'
-import image4 from '@assets/publications/4.png'
-import image5 from '@assets/publications/5.png'
-import image6 from '@assets/publications/6.png'
-
-const images = [image6, image5, image4, image3, image2, image1]
+const images = [image6, image5, image4, image3, image2, image1];
 ---
 
 <div class="md:col-span-8 md:col-start-3 col-span-10 col-start-2">
@@ -20,8 +19,7 @@ const images = [image6, image5, image4, image3, image2, image1]
     Publications
   </h1>
   <section class="font-montserrat-regular">
-    {
-      ListPublications.map((publication, index) => (
+    {ListPublications.map((publication, index) => (
         <Card
           title={publication.title}
           event={publication.event}
@@ -35,7 +33,6 @@ const images = [image6, image5, image4, image3, image2, image1]
           video={publication.video}
           acronym={publication.acronym}
         />
-      ))
-    }
+      ))}
   </section>
 </div>

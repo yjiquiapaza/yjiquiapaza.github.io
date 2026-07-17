@@ -8,17 +8,16 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "formatter-biome": "",
-    "formatter-prettier": "npx prettier --write **/*.astro ."
+    "format": "biome format --write .",
+    "lit": "biome lint",
+    "check": "biome check --write ."
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.0.12",
-    "astro": "^5.16.4",
-    "tailwindcss": "^4.0.12"
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.1.0",
+    "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.3.8",
-    "prettier": "3.7.4",
-    "prettier-plugin-astro": "0.14.1"
+    "@biomejs/biome": "2.5.4"
   }
 }

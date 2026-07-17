@@ -1,1 +1,1 @@
-export const personal = {}
+export const personal = {};
