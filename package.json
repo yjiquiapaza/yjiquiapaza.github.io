@@ -2,6 +2,7 @@
   "name": "yhonatan-personal-web",
   "type": "module",
   "version": "0.0.1",
+  "packageManager": "pnpm@11.13.1",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
