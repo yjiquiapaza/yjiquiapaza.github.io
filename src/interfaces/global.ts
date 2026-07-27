@@ -25,3 +25,9 @@ export interface link {
   href: string;
   text: string;
 }
+
+export interface news {
+  text: string;
+  emoji: string;
+  date: string;
+}

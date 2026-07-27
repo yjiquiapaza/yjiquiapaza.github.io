@@ -1,0 +1,16 @@
+---
+interface Props {
+  emoji: string;
+  date: string;
+}
+
+const { emoji, date } = Astro.props
+---
+
+<li class="grid grid-cols-subgrid col-span-3 items-baseline">
+  <span>{emoji}</span>
+  <time class="text-primary whitespace-nowrap font-medium">{date}</time>
+  <span class="pl-3">
+    <slot />
+  </span>
+</li>
