@@ -11,14 +11,14 @@ import { ListPublications } from "../data/publications";
 const images = [image6, image5, image4, image3, image2, image1];
 ---
 
-<div class="md:col-span-8 md:col-start-3 col-span-10 col-start-2">
+<div class="md:col-span-8 md:col-start-3 col-span-10 col-start-2 font-sans">
   <h1
-    class="text-left text-4xl font-alegreya-semi-bold-italic text-primary pt-10 pb-10"
+    class="text-left text-4xl font-sans font-semibold text-primary pt-10 pb-10"
     id="publications"
   >
     Publications
   </h1>
-  <section class="font-montserrat-regular">
+  <section class="font-sans text-lg">
     {ListPublications.map((publication, index) => (
         <Card
           title={publication.title}
