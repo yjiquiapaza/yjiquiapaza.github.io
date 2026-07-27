@@ -5,17 +5,14 @@ import image3 from "@assets/publications/3.png";
 import image4 from "@assets/publications/4.png";
 import image5 from "@assets/publications/5.png";
 import image6 from "@assets/publications/6.png";
-import Card from "../components/Card.astro";
+import Card from "@components/Card.astro";
 import { ListPublications } from "../data/publications";
 
 const images = [image6, image5, image4, image3, image2, image1];
 ---
 
 <div class="md:col-span-8 md:col-start-3 col-span-10 col-start-2 font-sans">
-  <h1
-    class="text-left text-4xl font-sans font-semibold text-primary pt-10 pb-10"
-    id="publications"
-  >
+  <h1 class="text-left text-4xl font-sans font-semibold text-primary pt-10 pb-10" id="publications">
     Publications
   </h1>
   <section class="font-sans text-lg">
